@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedio Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="preloader">
+
+    </div>
+    <video class="video-container" autoplay muted loop>
+        <source src="video.mp4" type="video/mp4" id="srcid">
+    </video>
+    
+    <div class="black">
+
+    </div>
+    <h1 class="heading-text">Video Project </h1>
+    <button class="btn">
+        <span>play</span>
+        <span>pause</span>
+        <span class="mover"></span>
+    </button>
+    </body>
+    <script >
+        const pre=document.querySelector('.preloader')
+        console.log(pre)
+        window.addEventListener("DOMContentLoaded",function(){
+            pre.classList.add("remove")
+        })
+        const btn=document.querySelector('.btn')
+        const video=document.querySelector('.video-container')
+        btn.addEventListener('click',function(){
+            if(!btn.classList.contains('slide')){
+                btn.classList.add('slide');
+                video.pause();
+            }
+            else{
+                btn.classList.remove('slide')
+                video.play();
+            }
+        })
+    </script>
+</html>
